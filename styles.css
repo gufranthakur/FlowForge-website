@@ -61,35 +61,61 @@ ul {
     font-size: 1.1rem;
 }
 
+/* Button base styles */
 .btn {
-    display: inline-block;
-    padding: 0.8rem 1.8rem;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px;
 }
 
+/* Primary button (Download) with blue background */
 .btn-primary {
-    background: var(--primary-color);
-    color: white;
+  background-color: #0066cc;
+  color: white;
 }
 
-.btn-primary:hover {
-    background: var(--primary-dark);
-    color: white;
+/* Documentation button with black/gray background */
+.btn-docs {
+  background-color: #2a2a2a;
+  color: white;
 }
 
-.btn-secondary {
-    background: transparent;
-    color: var(--text-color);
-    border: 2px solid var(--primary-color);
+/* The animated underline base style */
+.btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.3s ease;
 }
 
-.btn-secondary:hover {
-    background: rgba(0, 102, 204, 0.1);
-    color: var(--text-color);
+/* Download button white underline */
+.btn-primary::after {
+  background-color: white;
+}
+
+/* Documentation button blue underline */
+.btn-docs::after {
+  background-color: #0099ff;
+}
+
+/* Animation on hover - makes the underline expand from left to right */
+.btn:hover::after {
+  width: 100%;
+}
+
+/* Additional hover effects for better UX */
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Navigation */
